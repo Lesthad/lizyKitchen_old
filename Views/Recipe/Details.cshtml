@@ -1,0 +1,17 @@
+﻿@model lizykitchen.Models.Recipe
+
+<div class="thumbnail" style="width: 30rem;">
+    <img src="@Model.URLPhoto" alt=@Model.Title width="300" height="300" />
+
+    @*<div class="card-body">*@
+        <h4 class="caption">
+            @Model.Title
+        </h4>
+        @*<h3>@Model.ShortDescription</h3>*@
+
+        <p class="card-text">@Model.LongDescription</p>
+    @*</div>*@
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</div>

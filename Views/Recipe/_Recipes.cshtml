@@ -1,0 +1,33 @@
+﻿@model IEnumerable<lizykitchen.Models.Recipe>
+
+<div class="recipeList">
+    <div class="container">
+        @{int i = 1; }
+        @foreach (var r in Model)
+        {
+            if (i % 3 == 0)
+            {
+                @:<div class="row">
+            }
+            <div class="col-md-4">
+                <div class="thumbnail">
+
+                    <img src="@r.URLPhoto" alt=@r.Title style="width:100%" />
+
+                    <div class="caption">
+                        @*<h3>@r.ShortDescription</h3>*@
+                        @Html.ActionLink(@r.Title, "Details", "Recipe", new { Id = r.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", "Recipe", new { id = r.Id }, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            </div>
+
+            if (i % 3 == 0)
+            {
+                @:</div>
+            }
+
+            i++;
+        }
+    </div>
+</div>

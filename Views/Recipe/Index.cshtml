@@ -1,0 +1,50 @@
+﻿@model IEnumerable<lizykitchen.Models.Recipe>
+@{
+    ViewBag.Title = "Recetas";
+}
+
+<br />
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        @*<form method="get">
+                <div class="input-group">
+                    <input type="search" name="searchTerm" class="form-control center-block" placeholder="Search for..." />
+                    <span class="input-group-btn">
+                        <input type="submit" value="Search" class="btn btn-default" />
+                    </span>
+                </div>
+            </form>*@
+
+        @*@using (Ajax.BeginForm(
+                            new AjaxOptions
+                            {
+                                HttpMethod = "get",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "recipeList"
+                            }))
+        {
+            <div class="input-group">
+                <input type="search" name="searchTerm" class="form-control center-block" placeholder="Search for..." />
+                <span class="input-group-btn">
+                    <input type="submit" value="Search" class="btn btn-default" />
+                </span>
+            </div>
+        }*@
+
+        <form method="get" action="@Url.Action("Index")" data-otf-ajax="true" data-otf-target="#recipeList">
+            <div class="input-group">
+                <input type="search" name="searchTerm" class="form-control" placeholder="Search for..." data-otf-autocomplete="@Url.Action("Autocomplete")" />
+                <span class="input-group-btn">
+                    <input type="submit" value="Search" class="btn btn-default" />
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3">
+        @Html.ActionLink("Create", "Create")
+    </div>
+</div>
+<br />
+
+@Html.Partial("_Recipes", Model)
