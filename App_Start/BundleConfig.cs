@@ -9,7 +9,7 @@ namespace lizykitchen
         {
             bundles.Add(new ScriptBundle("~/bundles/otf").Include(
                 "~/Scripts/jquery-{version}.js",
-                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/jquery-ui*",
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/otf.js"));
