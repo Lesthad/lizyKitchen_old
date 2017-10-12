@@ -1,0 +1,14 @@
+﻿@model IEnumerable<lizykitchen.Models.Recipe>
+@{
+    ViewBag.Title = "About";
+}
+
+@foreach (var r in Model)
+{
+    <h2>@r.Title.</h2>
+    <h3>@r.ShortDescription</h3>
+
+    <img src="@r.URLPhoto" alt=@r.Title width="300" height="300" />
+
+    <p>@r.LongDescription</p>
+}
