@@ -22,3 +22,15 @@ select,
 textarea {
     /*max-width: 280px;*/
 }
+
+/****************************************************************************/
+/*Style autocomplete*/
+.ui-autocomplete{
+    background: #ffffff;
+    z-index: 99;
+}
+
+.ui-menu-item{
+    list-style: none;
+    list-style-position: inside;
+}
